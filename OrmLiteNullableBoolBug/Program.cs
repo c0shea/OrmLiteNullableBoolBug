@@ -22,7 +22,7 @@ namespace OrmLiteNullableBoolBug
                     .OrderBy(tlc => tlc.SequenceNumber)
                     .Take(1);
 
-                // My workaround for now:
+                // Although not the same condition, it works if I explicitly check for null
                 // (tlc.IsVoid == null || !tlc.IsVoid.Value))
 
                 var loyaltyCards = db.Select(query);
